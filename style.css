@@ -260,8 +260,11 @@ h2 {
 .card-content h3 {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 3.2rem;
-  font-weight: 400;
+  font-weight: 500;
+  color: #29251f;
   margin: 8px 0;
+  position: relative;
+  z-index: 3;
 }
 .card-content p:not(.card-label) { color: #655b4e; font-size: .86rem; max-width: 320px; }
 .collection-card a { color: #916b32; display: inline-block; margin-top: 15px; }
