@@ -204,6 +204,25 @@ h2 {
 .collection-card.home { background: linear-gradient(145deg, #263242, #111923); }
 .collection-card.living { background: linear-gradient(145deg, #30323b, #10121a); }
 .card-content { position: relative; z-index: 2; padding: 35px; }
+
+/* Nivara collection logos */
+.collection-logo {
+  display: block;
+  width: 160px;
+  height: 100px;
+  object-fit: contain;
+  object-position: left center;
+  margin: 18px 0 12px;
+}
+
+/* Smaller logos on mobile screens */
+@media (max-width: 600px) {
+  .collection-logo {
+    width: 130px;
+    height: 82px;
+  }
+}
+
 .card-number { color: var(--gold); font-size: .7rem; letter-spacing: .2em; }
 .card-label { font-size: .62rem; letter-spacing: .25em; color: #c9c4bb; }
 .card-content h3 {
