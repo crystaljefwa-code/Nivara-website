@@ -193,7 +193,7 @@ h2 {
     #101a2b 55%,
     #0b1321 100%
   );
-  border: 1px solid rgba(210, 177, 110, 0.3);
+  border: 1px solid rgba(180, 139, 75, 0.45);
   border-radius: 14px;
   transition:
     transform 0.3s ease,
@@ -205,14 +205,36 @@ h2 {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 35%, rgba(222,186,143,.22), transparent 34%),
-              linear-gradient(160deg, rgba(255,255,255,.04), rgba(0,0,0,.52));
-  transition: transform .6s;
+  background:
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(205, 166, 104, 0.18),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.02)
+    );
+  transition: transform 0.6s;
+  pointer-events: none;
 }
+
 .collection-card:hover::before { transform: scale(1.06); }
-.collection-card.fragrance { background: linear-gradient(145deg, #172a46, #080f1d); }
-.collection-card.home { background: linear-gradient(145deg, #263242, #111923); }
-.collection-card.living { background: linear-gradient(145deg, #30323b, #10121a); }
+
+/* Elegant cream and gold collection backgrounds */
+.collection-card.fragrance {
+  background: linear-gradient(135deg, #fffaf0 0%, #f5ead8 55%, #ead8b9 100%);
+}
+
+.collection-card.home {
+  background: linear-gradient(135deg, #fffdf8 0%, #f5f0e6 55%, #e9dfce 100%);
+}
+
+.collection-card.living {
+  background: linear-gradient(135deg, #fdfbf7 0%, #eee6d9 55%, #e0d0b7 100%);
+}
+
 .card-content { position: relative; z-index: 2; padding: 35px; }
 
 /* Nivara collection logos */
@@ -233,16 +255,16 @@ h2 {
   }
 }
 
-.card-number { color: var(--gold); font-size: .7rem; letter-spacing: .2em; }
-.card-label { font-size: .62rem; letter-spacing: .25em; color: #c9c4bb; }
+.card-number { color: #9a7136; font-size: .7rem; letter-spacing: .2em; }
+.card-label { font-size: .62rem; letter-spacing: .25em; color: #79684e; }
 .card-content h3 {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 3.2rem;
   font-weight: 400;
   margin: 8px 0;
 }
-.card-content p:not(.card-label) { color: #c7c6c2; font-size: .86rem; max-width: 320px; }
-.collection-card a { color: var(--gold-light); display: inline-block; margin-top: 15px; }
+.card-content p:not(.card-label) { color: #655b4e; font-size: .86rem; max-width: 320px; }
+.collection-card a { color: #916b32; display: inline-block; margin-top: 15px; }
 
 .manifesto {
   background: var(--cream);
