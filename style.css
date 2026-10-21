@@ -208,18 +208,18 @@ h2 {
 /* Nivara collection logos */
 .collection-logo {
   display: block;
-  width: 140px;
-  height: 80px;
+  width: 160px;
+  height: 100px;
   object-fit: contain;
   object-position: left center;
-  margin: 12px 0 10px;
+  margin: 18px 0 12px;
 }
 
-/* Logo sizing on mobile */
+/* Smaller logos on mobile screens */
 @media (max-width: 600px) {
   .collection-logo {
-    width: 110px;
-    height: 68px;
+    width: 130px;
+    height: 82px;
   }
 }
 
