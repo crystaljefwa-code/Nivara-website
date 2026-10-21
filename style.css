@@ -208,21 +208,20 @@ h2 {
 /* Nivara collection logos */
 .collection-logo {
   display: block;
-  width: 105px;
-  height: 65px;
+  width: 140px;
+  height: 80px;
   object-fit: contain;
   object-position: left center;
-  margin: 14px 0 10px;
+  margin: 12px 0 10px;
 }
 
-/* Smaller logos on mobile screens */
+/* Logo sizing on mobile */
 @media (max-width: 600px) {
   .collection-logo {
-    width: 90px;
-    height: 55px;
+    width: 110px;
+    height: 68px;
   }
 }
-
 
 .card-number { color: var(--gold); font-size: .7rem; letter-spacing: .2em; }
 .card-label { font-size: .62rem; letter-spacing: .25em; color: #c9c4bb; }
