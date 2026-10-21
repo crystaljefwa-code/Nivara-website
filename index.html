@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nivara — A more complete life. Discover considered fragrance, home and lifestyle pieces designed to make everyday living feel more beautiful, comfortable and complete.">
+  <title>NIVARA — A More Complete Life</title>
+  <link rel="icon" href="nivara-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Nivara home">
+      <img src="nivara-logo.png" alt="Nivara logo">
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#story">Our Story</a>
+      <a href="#collections">Collections</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="header-cta" href="#collections">Explore Nivara</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">NIVARA</p>
+        <h1>A more<br><em>complete</em> life.</h1>
+        <p class="hero-copy">Thoughtfully created fragrance, home and lifestyle experiences for the moments that make a space feel like yours.</p>
+        <div class="hero-actions">
+          <a class="button button-gold" href="#collections">Discover the collection</a>
+          <a class="text-link" href="#story">Our philosophy <span>→</span></a>
+        </div>
+      </div>
+      <div class="scroll-note">SCROLL TO EXPLORE <span>↓</span></div>
+    </section>
+
+    <section class="intro section" id="story">
+      <div class="section-kicker">01 — THE HOUSE OF NIVARA</div>
+      <div class="intro-grid">
+        <div>
+          <h2>Luxury that feels<br><em>like home.</em></h2>
+        </div>
+        <div class="intro-text">
+          <p>Nivara is being built around one simple belief: life feels better when the things around you are beautiful, useful and intentional.</p>
+          <p>From personal fragrance to the atmosphere of your home, every Nivara piece is designed to add comfort, character and a quiet sense of luxury to everyday living.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="collections section" id="collections">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">02 — COLLECTIONS</div>
+          <h2>Made for the <em>way you live.</em></h2>
+        </div>
+        <p>Start with fragrance. Grow into a complete world of considered living.</p>
+      </div>
+
+      <div class="collection-grid">
+        <article class="collection-card fragrance">
+          <div class="card-content">
+            <span class="card-number">01</span>
+            <p class="card-label">NIVARA</p>
+            <h3>Fragrance</h3>
+            <p>Signature scents created to become part of your presence, your ritual and your memory.</p>
+            <a href="#contact">Explore fragrance <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="collection-card home">
+          <div class="card-content">
+            <span class="card-number">02</span>
+            <p class="card-label">NIVARA</p>
+            <h3>Home</h3>
+            <p>Objects and rituals that turn a room into a feeling — warm, calm, elegant and yours.</p>
+            <a href="#contact">Coming soon <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="collection-card living">
+          <div class="card-content">
+            <span class="card-number">03</span>
+            <p class="card-label">NIVARA</p>
+            <h3>Living</h3>
+            <p>Thoughtful lifestyle pieces designed around comfort, function and the beauty of everyday life.</p>
+            <a href="#contact">Coming soon <span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="manifesto section" id="philosophy">
+      <div class="manifesto-inner">
+        <div class="section-kicker">03 — THE NIVARA PHILOSOPHY</div>
+        <blockquote>“Your home should not simply contain your life.<br>It should <em>complete</em> it.”</blockquote>
+        <p>Beautiful things matter most when they make you feel something: safe, seen, comfortable, inspired or loved. That is the world Nivara is building.</p>
+      </div>
+    </section>
+
+    <section class="journal section">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">04 — THE JOURNAL</div>
+          <h2>Notes on <em>living well.</em></h2>
+        </div>
+      </div>
+      <div class="journal-grid">
+        <article>
+          <span>01 / RITUALS</span>
+          <h3>The little rituals that make a space feel yours.</h3>
+          <a href="#contact">Read soon →</a>
+        </article>
+        <article>
+          <span>02 / SCENT</span>
+          <h3>Why fragrance can become part of your identity.</h3>
+          <a href="#contact">Read soon →</a>
+        </article>
+        <article>
+          <span>03 / HOME</span>
+          <h3>Building a home that feels calm, intentional and complete.</h3>
+          <a href="#contact">Read soon →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="newsletter section" id="contact">
+      <div class="newsletter-inner">
+        <div class="section-kicker">05 — STAY CLOSE</div>
+        <h2>Be part of the <em>Nivara</em> world.</h2>
+        <p>Join the list for collection launches, new scents, journal notes and quiet little luxuries.</p>
+        <form id="newsletter-form">
+          <label class="sr-only" for="email">Email address</label>
+          <input id="email" type="email" placeholder="Your email address" required>
+          <button class="button button-gold" type="submit">Join Nivara</button>
+        </form>
+        <small id="form-message" aria-live="polite"></small>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <img src="nivara-logo.png" alt="Nivara">
+      <p>A more complete life.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#story">Our Story</a>
+      <a href="#collections">Collections</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Nivara. All rights reserved.</span>
+      <span>Designed for a more complete life.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
