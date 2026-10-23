@@ -35,7 +35,23 @@ if (form && message) {
 
 /* NIVARA PHASE 1 CART
    Demo product is disabled until real scent details are added. */
-const products = [];
+const products = [
+  {
+    id: "preview-01",
+    name: "Placeholder Scent 01",
+    description: "A preview of a future Nivara fragrance. Final scent details coming soon."
+  },
+  {
+    id: "preview-02",
+    name: "Placeholder Scent 02",
+    description: "A preview of a future Nivara fragrance. Final scent details coming soon."
+  },
+  {
+    id: "preview-03",
+    name: "Placeholder Scent 03",
+    description: "A preview of a future Nivara fragrance. Final scent details coming soon."
+  }
+];
 
 const cartKey = "nivara-cart-v1";
 let cart = [];
@@ -192,16 +208,31 @@ renderCart();
 
 /* Product rendering will be enabled when real scent products are added.
    Example finish options: Classic KES 600 / Pearl KES 650. */
+
 function createProductCard(product) {
   const card = document.createElement("article");
   card.className = "product-card";
+
+  // Temporary artwork until real product photos are ready.
+  const art = document.createElement("div");
+  art.className = "product-art";
+
+  const monogram = document.createElement("span");
+  monogram.className = "product-monogram";
+  monogram.textContent = "N.";
+
+  const artNote = document.createElement("span");
+  artNote.className = "product-art-note";
+  artNote.textContent = "PREVIEW PRODUCT";
+
+  art.append(monogram, artNote);
 
   const info = document.createElement("div");
   info.className = "product-info";
 
   const category = document.createElement("p");
   category.className = "product-category";
-  category.textContent = "NIVARA FRAGRANCE";
+  category.textContent = "NIVARA FRAGRANCE · PREVIEW";
 
   const name = document.createElement("h3");
   name.textContent = product.name;
@@ -210,26 +241,59 @@ function createProductCard(product) {
   description.textContent = product.description;
 
   const select = document.createElement("select");
-  select.setAttribute("aria-label", `Choose finish for ${product.name}`);
+  select.className = "finish-select";
+  select.setAttribute(
+    "aria-label",
+    `Choose finish for ${product.name}`
+  );
 
   [
     { label: "Classic — KES 600", value: "Classic" },
     { label: "Pearl — KES 650", value: "Pearl" }
-  ].forEach(optionData => {
+  ].forEach(item => {
     const option = document.createElement("option");
-    option.value = optionData.value;
-    option.textContent = optionData.label;
+    option.value = item.value;
+    option.textContent = item.label;
     select.appendChild(option);
+  });
+
+  const price = document.createElement("p");
+  price.className = "product-price";
+  price.textContent = "KES 600";
+
+  select.addEventListener("change", () => {
+    price.textContent =
+      select.value === "Pearl" ? "KES 650" : "KES 600";
   });
 
   const button = document.createElement("button");
   button.type = "button";
   button.className = "button button-gold";
-  button.textContent = "Add to bag";
-  button.addEventListener("click", () => addToCart(product, select.value));
+  button.textContent = "Add preview to bag";
 
-  info.append(category, name, description, select, button);
-  card.appendChild(info);
+  button.addEventListener("click", () => {
+    addToCart(product, select.value);
+  });
+
+  const note = document.createElement("p");
+  note.className = "product-note";
+  note.textContent =
+    "Demonstration only — final fragrance details coming soon.";
+
+  info.append(category, name, description, select, price, button, note);
+  card.append(art, info);
+
   return card;
+}
+
+// Display all temporary products in the shop.
+const productGrid = document.getElementById("product-grid");
+
+if (productGrid) {
+  productGrid.replaceChildren();
+
+  products.forEach(product => {
+    productGrid.appendChild(createProductCard(product));
+  });
 }
 
