@@ -56,12 +56,30 @@ const products = [
 const cartKey = "nivara-cart-v1";
 let cart = [];
 
+
 try {
   cart = JSON.parse(localStorage.getItem(cartKey) || "[]");
   if (!Array.isArray(cart)) cart = [];
 } catch {
   cart = [];
 }
+
+// Repair any older cart entries with missing or incorrect prices.
+cart = cart
+  .filter(item => item && item.key && item.name)
+  .map(item => {
+    const finish = item.finish === "Pearl" ? "Pearl" : "Classic";
+
+    return {
+      ...item,
+      finish,
+      price: finish === "Pearl" ? 650 : 600,
+      quantity:
+        Number.isInteger(item.quantity) && item.quantity > 0
+          ? item.quantity
+          : 1
+    };
+  });
 
 const cartToggle = document.getElementById("cart-toggle");
 const cartPanel = document.getElementById("cart-panel");
