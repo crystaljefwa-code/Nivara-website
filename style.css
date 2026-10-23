@@ -725,3 +725,60 @@ form .button { white-space: nowrap; }
   color: #756d61;
 }
 
+/* Shopping bag controls: visible and easy to use */
+#cart-panel:not([hidden]) {
+  display: block;
+}
+
+#cart-items {
+  display: block;
+  width: 100%;
+}
+
+.cart-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 0;
+  border-bottom: 1px solid #e5dccd;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity-controls button {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #b89964;
+  border-radius: 4px;
+  background: #f8f4ec;
+  color: #111c30;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.remove-item {
+  display: inline-block;
+  padding: 7px 0;
+  border: 0;
+  background: transparent;
+  color: #8d4d3d;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 520px) {
+  .cart-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .quantity-controls {
+    justify-content: flex-start;
+  }
+}
