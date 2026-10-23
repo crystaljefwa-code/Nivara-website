@@ -374,3 +374,324 @@ form .button { white-space: nowrap; }
   .footer-bottom { display: block; }
   .footer-bottom span { display: block; margin-top: 8px; }
 }
+
+/* ==============================
+   NIVARA PHASE 1 — FRAGRANCE SHOP
+   ============================== */
+
+.shop {
+  background: #f8f4ec;
+  color: #111c30;
+}
+
+.shop .section-kicker {
+  color: #92703d;
+}
+
+.shop .section-heading {
+  align-items: start;
+  margin-top: 24px;
+}
+
+.shop .section-heading > div {
+  max-width: 720px;
+}
+
+.shop .section-heading p {
+  color: #6b665e;
+  max-width: 540px;
+}
+
+.finish-guide {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 950px;
+  margin: 50px auto 70px;
+}
+
+.finish-card {
+  padding: 36px;
+  background: linear-gradient(145deg, #fffefa, #eee4d3);
+  border: 1px solid #d6bd91;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(29, 27, 22, .06);
+}
+
+.pearl-finish {
+  background: linear-gradient(145deg, #fffefa, #f0e5d0);
+}
+
+.finish-symbol {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 24px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #c4a46b;
+  border-radius: 50%;
+  color: #a47d40;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 3.5rem;
+}
+
+.pearl-symbol {
+  background:
+    radial-gradient(circle at 30% 28%, #fff 0 5px, #e7d8bc 6px 9px, transparent 10px),
+    radial-gradient(circle at 70% 35%, #fff 0 5px, #e7d8bc 6px 9px, transparent 10px),
+    radial-gradient(circle at 40% 70%, #fff 0 5px, #e7d8bc 6px 9px, transparent 10px);
+}
+
+.finish-label {
+  color: #967442;
+  font-size: .65rem;
+  letter-spacing: .2em;
+}
+
+.finish-card h3,
+.product-info h3,
+.shop-toolbar h3,
+.cart-heading h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+}
+
+.finish-card h3 {
+  margin: 8px 0;
+  font-size: 2.6rem;
+}
+
+.finish-card > p:not(.finish-label) {
+  color: #625c52;
+}
+
+.finish-card strong {
+  display: inline-block;
+  margin-top: 14px;
+  color: #8b682f;
+  font-size: 1.15rem;
+}
+
+.shop-notice {
+  max-width: 950px;
+  margin: 0 auto 55px;
+  padding: 20px;
+  border-top: 1px solid #d8c5a3;
+  border-bottom: 1px solid #d8c5a3;
+  text-align: center;
+  color: #6b665e;
+}
+
+.shop-toolbar {
+  max-width: 1100px;
+  margin: 0 auto 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.shop-toolbar h3 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.cart-toggle {
+  padding: 12px 18px;
+  border: 1px solid #b89964;
+  background: #111c30;
+  color: #fffaf2;
+  cursor: pointer;
+  letter-spacing: .04em;
+}
+
+.product-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.product-card {
+  overflow: hidden;
+  background: #fffefa;
+  border: 1px solid #e0d4c0;
+  border-radius: 10px;
+}
+
+.product-art {
+  min-height: 230px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  background: radial-gradient(circle at center, #fffefa, #e9dfce);
+}
+
+.product-monogram {
+  color: #b4945d;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 5rem;
+}
+
+.product-art-note {
+  position: absolute;
+  bottom: 15px;
+  font-size: .58rem;
+  letter-spacing: .2em;
+  color: #8d7958;
+}
+
+.product-info {
+  padding: 24px;
+}
+
+.product-category {
+  color: #987440;
+  font-size: .65rem;
+  letter-spacing: .15em;
+}
+
+.product-info h3 {
+  font-size: 1.8rem;
+  margin: 8px 0;
+}
+
+.product-info > p:not(.product-category) {
+  color: #696157;
+  font-size: .88rem;
+}
+
+.product-price {
+  color: #8b682f;
+  font-weight: 600;
+}
+
+.product-note {
+  font-size: .78rem !important;
+}
+
+.cart-panel {
+  max-width: 700px;
+  margin: 35px auto 0;
+  padding: 28px;
+  background: #fffefa;
+  border: 1px solid #d6bd91;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(9, 18, 32, .12);
+}
+
+.cart-heading,
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.cart-heading h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+#cart-close {
+  background: none;
+  border: 0;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #111c30;
+}
+
+.cart-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 0;
+  border-bottom: 1px solid #e5dccd;
+}
+
+.cart-row small {
+  display: block;
+  color: #756d61;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-controls button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #cdb78f;
+  background: #f8f4ec;
+  cursor: pointer;
+}
+
+.remove-item {
+  border: 0;
+  background: none;
+  color: #8d4d3d;
+  cursor: pointer;
+  font-size: .78rem;
+}
+
+.cart-total {
+  margin: 24px 0;
+  padding-top: 15px;
+  border-top: 1px solid #d8c5a3;
+}
+
+.cart-total strong {
+  font-size: 1.2rem;
+}
+
+.cart-note {
+  color: #756d61;
+  font-size: .8rem;
+}
+
+.shop .button {
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .finish-guide {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .finish-card {
+    padding: 25px;
+  }
+
+  .shop-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cart-panel {
+    padding: 18px;
+  }
+
+  .cart-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .cart-row .remove-item {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}
+
