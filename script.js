@@ -325,6 +325,7 @@ const townField = document.getElementById("town-field");
 const deliveryTown = document.getElementById("delivery-town");
 const deliveryResult = document.getElementById("delivery-result");
 
+
 function updateDeliveryEstimate() {
   if (!deliveryMethod || !deliveryResult) return;
 
@@ -335,7 +336,7 @@ function updateDeliveryEstimate() {
 
   if (!isCountyDelivery) {
     deliveryResult.textContent =
-      "Free collection from Nivara’s designated Nairobi pickup point.";
+      "Delivery fee: FREE — collect from Nivara’s designated Nairobi pickup point.";
     return;
   }
 
@@ -343,7 +344,7 @@ function updateDeliveryEstimate() {
 
   if (!selected) {
     deliveryResult.textContent =
-      "Select an available county or destination to view the proposed delivery fee.";
+      "Select your destination to view the fixed delivery fee.";
     return;
   }
 
@@ -352,16 +353,9 @@ function updateDeliveryEstimate() {
   const amount = Number(fee);
 
   deliveryResult.textContent =
-    `Proposed delivery fee: KES ${amount.toLocaleString("en-KE")} for ${destination} County.` +
-    (town
-      ? ` Destination entered: ${town}.`
-      : " Enter your destination town or parcel terminal above.") +
-    " Route availability and the final fee must be confirmed before payment.";
+    `Delivery fee: KES ${amount.toLocaleString("en-KE")} — ${destination} County.` +
+    (town ? ` Destination: ${town}.` : " Enter your destination town or parcel terminal.") +
+    " Delivery is subject to route availability and carrier acceptance of perfume.";
 }
 
-deliveryMethod?.addEventListener("change", updateDeliveryEstimate);
-deliveryDestination?.addEventListener("change", updateDeliveryEstimate);
-deliveryTown?.addEventListener("input", updateDeliveryEstimate);
-
-updateDeliveryEstimate();
 
