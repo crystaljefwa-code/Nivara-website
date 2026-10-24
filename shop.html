@@ -65,6 +65,80 @@
       <div class="shop-notice">
         <p>Your scent, your finish. More fragrances will appear here as the collection grows.</p>
       </div>
+      
+      <!-- DELIVERY & COLLECTION OPTIONS -->
+      <section class="delivery-estimator" aria-labelledby="delivery-title">
+        <div class="delivery-estimator-heading">
+          <p class="finish-label">DELIVERY &amp; COLLECTION</p>
+          <h3 id="delivery-title">Plan your delivery.</h3>
+          <p>Choose collection or an available county destination to see our proposed delivery fee.</p>
+        </div>
+
+        <div class="delivery-form">
+          <div class="delivery-field">
+            <label for="delivery-method">How would you like to receive your order?</label>
+            <select id="delivery-method" class="delivery-select">
+              <option value="pickup">Nairobi pickup — Free</option>
+              <option value="county">County delivery — Bus or shuttle</option>
+            </select>
+          </div>
+
+          <div class="delivery-field" id="destination-field" hidden>
+            <label for="delivery-destination">Choose your county / destination</label>
+            <select id="delivery-destination" class="delivery-select">
+              <option value="">Select a destination</option>
+
+              <optgroup label="Nearby counties — proposed KES 350">
+                <option value="350|Kiambu">Kiambu County</option>
+                <option value="350|Machakos">Machakos County</option>
+                <option value="350|Kajiado">Kajiado County</option>
+                <option value="350|Murang’a">Murang’a County</option>
+                <option value="350|Nyandarua">Nyandarua County</option>
+                <option value="350|Nyeri">Nyeri County</option>
+                <option value="350|Kirinyaga">Kirinyaga County</option>
+                <option value="350|Embu">Embu County</option>
+                <option value="350|Nakuru">Nakuru County</option>
+                <option value="350|Narok">Narok County</option>
+                <option value="350|Makueni">Makueni County</option>
+                <option value="350|Kitui">Kitui County</option>
+                <option value="350|Laikipia">Laikipia County</option>
+                <option value="350|Tharaka-Nithi">Tharaka-Nithi County</option>
+              </optgroup>
+
+              <optgroup label="Selected farther destinations — proposed KES 700">
+                <option value="700|Meru">Meru County — Meru town</option>
+                <option value="700|Uasin Gishu">Uasin Gishu County — Eldoret</option>
+                <option value="700|Kisumu">Kisumu County — Kisumu</option>
+                <option value="700|Mombasa">Mombasa County — Mombasa</option>
+                <option value="700|Kilifi">Kilifi County — Kilifi</option>
+                <option value="700|Kwale">Kwale County — Kwale</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="delivery-field" id="town-field" hidden>
+            <label for="delivery-town">Destination town or parcel terminal</label>
+            <input
+              id="delivery-town"
+              type="text"
+              placeholder="Enter town or preferred parcel terminal"
+            >
+          </div>
+        </div>
+
+        <div class="delivery-result" id="delivery-result" role="status" aria-live="polite">
+          Free collection from Nivara’s designated Nairobi pickup point.
+        </div>
+
+        <p class="delivery-disclaimer">
+          Rates are proposed estimates, not confirmed carrier prices.
+          County delivery is available only where a suitable single-mode
+          bus or shuttle route is confirmed and the carrier accepts perfume.
+          We’ll confirm the route and final fee before payment.
+          Collection is from an agreed parcel office or terminal, not home delivery.
+        </p>
+      </section>
+      <!-- END DELIVERY & COLLECTION OPTIONS -->
 
       <div class="shop-toolbar">
         <h3>Our fragrances</h3>
