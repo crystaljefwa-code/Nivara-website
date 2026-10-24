@@ -782,3 +782,110 @@ form .button { white-space: nowrap; }
     justify-content: flex-start;
   }
 }
+
+/* ==============================
+   NIVARA DELIVERY & COLLECTION
+   ============================== */
+
+.delivery-estimator {
+  max-width: 950px;
+  margin: 0 auto 70px;
+  padding: 34px;
+  background: #fffefa;
+  border: 1px solid #d6bd91;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(29, 27, 22, .05);
+}
+
+.delivery-estimator-heading {
+  max-width: 650px;
+  margin-bottom: 28px;
+}
+
+.delivery-estimator-heading h3 {
+  margin: 6px 0 10px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #111c30;
+}
+
+.delivery-estimator-heading > p:last-child {
+  color: #696157;
+}
+
+.delivery-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.delivery-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.delivery-field[hidden] {
+  display: none;
+}
+
+.delivery-field label {
+  color: #302b24;
+  font-size: .82rem;
+  font-weight: 500;
+}
+
+.delivery-select,
+.delivery-field input {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 12px;
+  border: 1px solid #d6bd91;
+  border-radius: 4px;
+  background: #fffaf2;
+  color: #111c30;
+  font: inherit;
+  font-size: .85rem;
+}
+
+.delivery-field input {
+  flex: initial;
+}
+
+.delivery-select:focus,
+.delivery-field input:focus {
+  outline: 2px solid #b89964;
+  outline-offset: 2px;
+}
+
+.delivery-result {
+  margin-top: 22px;
+  padding: 17px 18px;
+  background: #f5f0e7;
+  border-left: 3px solid #b89964;
+  color: #393328;
+  font-size: .92rem;
+}
+
+.delivery-disclaimer {
+  margin: 15px 0 0;
+  color: #756d61;
+  font-size: .76rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .delivery-estimator {
+    padding: 22px;
+  }
+
+  .delivery-form {
+    grid-template-columns: 1fr;
+  }
+
+  .delivery-estimator-heading h3 {
+    font-size: 2.1rem;
+  }
+}
