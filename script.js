@@ -86,6 +86,8 @@ const cartPanel = document.getElementById("cart-panel");
 const cartClose = document.getElementById("cart-close");
 const cartItems = document.getElementById("cart-items");
 const cartCount = document.getElementById("cart-count");
+const cartSubtotal = document.getElementById("cart-subtotal");
+const cartDeliveryFee = document.getElementById("cart-delivery-fee");
 const cartTotal = document.getElementById("cart-total");
 const continueShopping = document.getElementById("continue-shopping");
 
@@ -105,14 +107,35 @@ function saveCart() {
 }
 
 function renderCart() {
-  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const total = cart.reduce(
+  const count = cart.reduce(
+    (sum, item) => sum + item.quantity,
+    0
+  );
+
+  const subtotal = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
 
+  // Read the selected delivery option.
+  const method =
+    document.getElementById("delivery-method")?.value || "pickup";
+
+  const selection =
+    document.getElementById("delivery-destination")?.value || "";
+
+  const deliveryFee =
+    method === "county" && selection
+      ? Math.max(0, Number(selection.split("|")[0]) || 0)
+      : 0;
+
+  const total = subtotal + deliveryFee;
+
   if (cartCount) cartCount.textContent = count;
+  if (cartSubtotal) cartSubtotal.textContent = money(subtotal);
+  if (cartDeliveryFee) cartDeliveryFee.textContent = money(deliveryFee);
   if (cartTotal) cartTotal.textContent = money(total);
+
   if (!cartItems) return;
 
   cartItems.replaceChildren();
@@ -358,8 +381,15 @@ function updateDeliveryEstimate() {
     " Delivery is subject to route availability and carrier acceptance of perfume.";
 }
 
-deliveryMethod?.addEventListener("change", updateDeliveryEstimate);
-deliveryDestination?.addEventListener("change", updateDeliveryEstimate);
+deliveryMethod?.addEventListener("change", () => {
+  updateDeliveryEstimate();
+  renderCart();
+});
+
+deliveryDestination?.addEventListener("change", () => {
+  updateDeliveryEstimate();
+  renderCart();
+});
 deliveryTown?.addEventListener("input", updateDeliveryEstimate);
 
 updateDeliveryEstimate();
