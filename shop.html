@@ -1,0 +1,126 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover Nivara Fragrance. Choose your signature scent and your preferred finish.">
+  <title>Shop Nivara Fragrance — NIVARA</title>
+
+  <link rel="icon" href="nivara-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header" id="top">
+    <a class="brand brand-wordmark" href="index.html" aria-label="Nivara home">NIVARA</a>
+
+    <button class="menu-toggle" type="button"
+      aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html#story">Our Story</a>
+      <a href="index.html#collections">Collections</a>
+      <a href="shop.html">Shop</a>
+      <a href="index.html#philosophy">Philosophy</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <a class="header-cta" href="shop.html">Shop Nivara</a>
+  </header>
+
+  <main>
+    <section class="shop section" id="shop">
+      <div class="section-kicker">01 — THE FRAGRANCE SHOP</div>
+
+      <div class="section-heading">
+        <div>
+          <h2>Find your <em>signature scent.</em></h2>
+          <p>Choose your fragrance, then select the finish that feels like you.</p>
+        </div>
+      </div>
+
+      <div class="finish-guide">
+        <article class="finish-card">
+          <div class="finish-symbol classic-symbol">N</div>
+          <p class="finish-label">THE TIMELESS FINISH</p>
+          <h3>Classic</h3>
+          <p>A clean, elegant bottle without decorative pearls.</p>
+          <strong>KES 600</strong>
+        </article>
+
+        <article class="finish-card pearl-finish">
+          <div class="finish-symbol pearl-symbol">✧</div>
+          <p class="finish-label">THE PEARL FINISH</p>
+          <h3>Pearl</h3>
+          <p>Your fragrance finished with decorative pearls on the bottle.</p>
+          <strong>KES 650</strong>
+        </article>
+      </div>
+
+      <div class="shop-notice">
+        <p>Your scent, your finish. More fragrances will appear here as the collection grows.</p>
+      </div>
+
+      <div class="shop-toolbar">
+        <h3>Our fragrances</h3>
+        <button class="cart-toggle" id="cart-toggle" type="button">
+          Shopping bag (<span id="cart-count">0</span>)
+        </button>
+      </div>
+
+      <div class="product-grid" id="product-grid"></div>
+
+      <aside class="cart-panel" id="cart-panel"
+        aria-label="Shopping cart" hidden>
+
+        <div class="cart-heading">
+          <h3>Your shopping bag</h3>
+          <button type="button" id="cart-close"
+            aria-label="Close shopping bag">×</button>
+        </div>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-total">
+          <span>Subtotal</span>
+          <strong id="cart-total">KES 0</strong>
+        </div>
+
+        <p class="cart-note">
+          Delivery charges are not included. Checkout will be added in Phase 2.
+        </p>
+
+        <button type="button" class="button button-gold"
+          id="continue-shopping">Continue shopping</button>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <img src="nivara-logo.png" alt="Nivara">
+      <p>A more complete life.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html#story">Our Story</a>
+      <a href="index.html#collections">Collections</a>
+      <a href="index.html#philosophy">Philosophy</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Nivara. All rights reserved.</span>
+      <span>Designed for a more complete life.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+```
