@@ -315,3 +315,53 @@ if (productGrid) {
   });
 }
 
+/* NIVARA DELIVERY ESTIMATOR
+   Shows proposed rates only; it does not book a carrier or take payment. */
+
+const deliveryMethod = document.getElementById("delivery-method");
+const deliveryDestination = document.getElementById("delivery-destination");
+const destinationField = document.getElementById("destination-field");
+const townField = document.getElementById("town-field");
+const deliveryTown = document.getElementById("delivery-town");
+const deliveryResult = document.getElementById("delivery-result");
+
+function updateDeliveryEstimate() {
+  if (!deliveryMethod || !deliveryResult) return;
+
+  const isCountyDelivery = deliveryMethod.value === "county";
+
+  if (destinationField) destinationField.hidden = !isCountyDelivery;
+  if (townField) townField.hidden = !isCountyDelivery;
+
+  if (!isCountyDelivery) {
+    deliveryResult.textContent =
+      "Free collection from Nivara’s designated Nairobi pickup point.";
+    return;
+  }
+
+  const selected = deliveryDestination?.value || "";
+
+  if (!selected) {
+    deliveryResult.textContent =
+      "Select an available county or destination to view the proposed delivery fee.";
+    return;
+  }
+
+  const [fee, destination] = selected.split("|");
+  const town = deliveryTown?.value.trim();
+  const amount = Number(fee);
+
+  deliveryResult.textContent =
+    `Proposed delivery fee: KES ${amount.toLocaleString("en-KE")} for ${destination} County.` +
+    (town
+      ? ` Destination entered: ${town}.`
+      : " Enter your destination town or parcel terminal above.") +
+    " Route availability and the final fee must be confirmed before payment.";
+}
+
+deliveryMethod?.addEventListener("change", updateDeliveryEstimate);
+deliveryDestination?.addEventListener("change", updateDeliveryEstimate);
+deliveryTown?.addEventListener("input", updateDeliveryEstimate);
+
+updateDeliveryEstimate();
+
