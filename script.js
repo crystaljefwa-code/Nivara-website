@@ -358,4 +358,10 @@ function updateDeliveryEstimate() {
     " Delivery is subject to route availability and carrier acceptance of perfume.";
 }
 
+deliveryMethod?.addEventListener("change", updateDeliveryEstimate);
+deliveryDestination?.addEventListener("change", updateDeliveryEstimate);
+deliveryTown?.addEventListener("input", updateDeliveryEstimate);
+
+updateDeliveryEstimate();
+
 
