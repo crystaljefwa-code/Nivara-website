@@ -480,7 +480,7 @@ if (checkoutForm) {
 
     try {
       const response = await fetch(
-        "https://formsubmit.co/ajax/officialnivara1@gmail.com",
+        "https://formsubmit.co/ajax/jibuca",
         {
           method: "POST",
           headers: {
