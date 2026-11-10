@@ -265,7 +265,49 @@
   <p>Delivery fees will be confirmed before payment.</p>
 </div>
 
-<button type="button" class="button button-gold"
+<!-- NIVARA CHECKOUT FORM -->
+<div class="checkout-section" id="checkout-section">
+  <h3>Complete your order</h3>
+  <p>Enter your details so we can confirm your order.</p>
+
+  <form id="checkout-form">
+
+    <div class="delivery-field">
+      <label for="customer-name">Full name</label>
+      <input type="text" id="customer-name" name="Customer name" required>
+    </div>
+
+    <div class="delivery-field">
+      <label for="customer-phone">WhatsApp phone number</label>
+      <input type="tel" id="customer-phone" name="Customer phone" placeholder="+254 7XX XXX XXX" required>
+    </div>
+
+    <div class="delivery-field">
+      <label for="customer-email">Email address</label>
+      <input type="email" id="customer-email" name="Customer email" required>
+    </div>
+
+    <div class="delivery-field">
+      <label for="customer-notes">Additional instructions (optional)</label>
+      <textarea id="customer-notes" name="Additional instructions" rows="3" placeholder="Any details about your order..."></textarea>
+    </div>
+
+    <label class="checkout-consent">
+      <input type="checkbox" id="privacy-consent" required>
+      I agree to Nivara using my details to process and communicate about this order.
+    </label>
+
+    <button type="submit" class="button button-gold" id="place-order">
+      Submit order
+    </button>
+
+    <p id="checkout-status" role="status" aria-live="polite"></p>
+
+  </form>
+</div>
+<!-- END NIVARA CHECKOUT FORM -->
+
+        <button type="button" class="button button-gold"
           id="continue-shopping">Continue shopping</button>
       </aside>
     </section>
