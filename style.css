@@ -889,3 +889,95 @@ form .button { white-space: nowrap; }
     font-size: 2.1rem;
   }
 }
+/* ==============================
+   NIVARA CHECKOUT FORM
+   ============================== */
+
+.checkout-section {
+  max-width: 950px;
+  margin: 40px auto 25px;
+  padding: 35px;
+  background: #f8f4ec;
+  border: 1px solid #d6bd91;
+  border-radius: 12px;
+}
+
+.checkout-section h3 {
+  margin: 0 0 8px;
+  color: #111c30;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2.3rem;
+}
+
+.checkout-section > p {
+  color: #756d61;
+  margin-bottom: 25px;
+}
+
+#checkout-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+#checkout-form .delivery-field {
+  width: 100%;
+}
+
+#checkout-form input,
+#checkout-form textarea {
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 16px;
+  border: 1px solid #d6bd91;
+  border-radius: 5px;
+  background: #fffefa;
+  color: #111c30;
+  font: inherit;
+  font-size: .9rem;
+}
+
+#checkout-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#checkout-form input:focus,
+#checkout-form textarea:focus {
+  outline: 2px solid #b89964;
+  outline-offset: 2px;
+}
+
+.checkout-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #514a40;
+  font-size: .82rem;
+}
+
+.checkout-consent input {
+  flex: 0 0 18px;
+  width: 18px !important;
+  min-height: 18px !important;
+  margin-top: 5px;
+}
+
+#checkout-form button {
+  width: 100%;
+  min-height: 54px;
+}
+
+#checkout-status {
+  color: #514a40;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .checkout-section {
+    padding: 22px;
+  }
+}
