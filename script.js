@@ -394,4 +394,144 @@ deliveryTown?.addEventListener("input", updateDeliveryEstimate);
 
 updateDeliveryEstimate();
 
+/* NIVARA CHECKOUT — FORMSUBMIT */
+
+const checkoutForm = document.getElementById("checkout-form");
+const checkoutStatus = document.getElementById("checkout-status");
+
+if (checkoutForm) {
+  checkoutForm.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    if (!cart.length) {
+      checkoutStatus.textContent =
+        "Your shopping bag is empty. Please add a product first.";
+      return;
+    }
+
+    const customerName =
+      document.getElementById("customer-name").value.trim();
+
+    const customerPhone =
+      document.getElementById("customer-phone").value.trim();
+
+    const customerEmail =
+      document.getElementById("customer-email").value.trim();
+
+    const notes =
+      document.getElementById("customer-notes").value.trim();
+
+    const method =
+      document.getElementById("delivery-method").value;
+
+    const destination =
+      document.getElementById("delivery-destination").value;
+
+    const town =
+      document.getElementById("delivery-town").value.trim();
+
+    if (method === "county" && (!destination || !town)) {
+      checkoutStatus.textContent =
+        "Please select your destination and enter your town or parcel terminal.";
+      return;
+    }
+
+    const subtotal = cart.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+
+    const deliveryFee =
+      method === "county"
+        ? Number(destination.split("|")[0])
+        : 0;
+
+    const total = subtotal + deliveryFee;
+
+    const orderDetails = cart.map(item =>
+      `${item.name} | ${item.finish} | Quantity: ${item.quantity} | ${money(item.price * item.quantity)}`
+    ).join("\n");
+
+    const deliveryDetails =
+      method === "pickup"
+        ? "Nairobi designated pickup point — Free"
+        : `${destination.split("|")[1]} County — ${town}`;
+
+    const formData = {
+      _subject: "New Nivara Website Order",
+      _template: "table",
+      name: customerName,
+      email: customerEmail,
+      phone: customerPhone,
+      "Order items": orderDetails,
+      "Delivery method": deliveryDetails,
+      "Products subtotal": money(subtotal),
+      "Delivery fee": money(deliveryFee),
+      "Estimated total": money(total),
+      "Customer instructions": notes || "None"
+    };
+
+    const submitButton =
+      document.getElementById("place-order");
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
+    checkoutStatus.textContent = "Sending your order...";
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/officialnivara1@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(formData)
+        }
+      );
+
+      const result = await response.json();
+
+      if (!response.ok || result.success !== "true") {
+        throw new Error("Order submission failed.");
+      }
+
+      checkoutStatus.textContent =
+        "Your order request has been sent to Nivara! Please contact us on WhatsApp to follow up.";
+
+      const whatsappMessage =
+        `Hello Nivara! I have submitted an order request.\n\n` +
+        `Name: ${customerName}\n` +
+        `Phone: ${customerPhone}\n` +
+        `Order:\n${orderDetails}\n\n` +
+        `Delivery: ${deliveryDetails}\n` +
+        `Subtotal: ${money(subtotal)}\n` +
+        `Delivery: ${money(deliveryFee)}\n` +
+        `Estimated total: ${money(total)}\n\n` +
+        `Please confirm availability and payment arrangements.`;
+
+      const whatsappLink = document.createElement("a");
+      whatsappLink.href =
+        "https://wa.me/254718364171?text=" +
+        encodeURIComponent(whatsappMessage);
+      whatsappLink.target = "_blank";
+      whatsappLink.rel = "noopener noreferrer";
+      whatsappLink.textContent = "Continue to Nivara WhatsApp";
+
+      checkoutStatus.appendChild(document.createElement("br"));
+      checkoutStatus.appendChild(whatsappLink);
+
+      checkoutForm.reset();
+
+    } catch (error) {
+      checkoutStatus.textContent =
+        "We couldn't send your order. Please try again or contact Nivara on WhatsApp.";
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Submit order";
+    }
+  });
+}
+
 
